@@ -13,10 +13,6 @@ public class PlayerController : PhysicsObject
 	public SpriteRenderer spriteRenderer;
 	public Animator anim;
 
-	bool leftClicked = false;
-	bool rightClicked = false;
-	bool jumpClicked = false;
-
 	private void Awake()
 	{
 		startPoint = transform.position;
