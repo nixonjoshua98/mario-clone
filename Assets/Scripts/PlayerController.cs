@@ -43,6 +43,14 @@ public class PlayerController : PhysicsObject
 		anim.SetFloat("VelocityX", Mathf.Abs(currentVelocity.x));
 
 		if (transform.position.y <= -10.0f)
+		{
+			GameObject cam = GameObject.Find("CM vcam1");
+
+			cam.SetActive(false);
+			
 			transform.position = startPoint;
+
+			cam.SetActive(true);
+		}
 	}
 }
