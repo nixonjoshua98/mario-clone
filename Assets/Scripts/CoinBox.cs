@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// https://forum.unity.com/threads/mario-style-jumping.381906/
+
 public class CoinBox : MonoBehaviour
 {
 	CollisionTrigger colTrigger;
@@ -31,5 +33,7 @@ public class CoinBox : MonoBehaviour
 		hasBeenHit = true;
 
 		GetComponent<SpriteRenderer>().sprite = afterHitSprite;
+
+		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().coins++;
 	}
 }

@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class PlayerController : PhysicsObject
-{
+public class PlayerController : PhysicsObject {
 	public float movementSpeed = 1.0f;
 	public float jumpMultiplier = 1.0f;
 
@@ -13,41 +13,50 @@ public class PlayerController : PhysicsObject
 	public SpriteRenderer spriteRenderer;
 	public Animator anim;
 
-	private void Awake()
-	{
+	[Header("Collectables")]
+	public int coins;
+
+	[Header("Objects")]
+	public Text coinText;
+
+	private void Awake() {
 		startPoint = transform.position;
 	}
 
-	protected override void ComputeVelocity()
-	{
+	protected override void ComputeVelocity() {
 		Vector2 move = Vector2.zero;
 
 		move.x = Input.GetAxisRaw("Horizontal");
 
 		// Only allow jumping when grounded
-		if (isGrounded && Input.GetButtonDown("Jump"))
-		{
+		if (isGrounded && Input.GetButtonDown("Jump")) {
 			currentVelocity.y = jumpMultiplier;
 		}
 
 		targetVelocity = move * movementSpeed;
 	}
 
-	private void LateUpdate()
+	private new void FixedUpdate()  
 	{
-		if (currentVelocity.x != 0)
-		{
+		base.FixedUpdate();
+
+		coinText.text = coins.ToString();
+	}
+
+
+
+	private void LateUpdate() {
+		if (currentVelocity.x != 0){
 			spriteRenderer.flipX = currentVelocity.x < 0.0f;
 		}
 
 		anim.SetFloat("VelocityX", Mathf.Abs(currentVelocity.x));
 
-		if (transform.position.y <= -10.0f)
-		{
+		if (transform.position.y <= -10.0f) {
 			GameObject cam = GameObject.Find("CM vcam1");
 
 			cam.SetActive(false);
-			
+
 			transform.position = startPoint;
 
 			cam.SetActive(true);
