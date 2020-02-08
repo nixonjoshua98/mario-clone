@@ -15,6 +15,8 @@ public class PlayerController : PhysicsObject {
 
 	[Header("Collectables")]
 	public int coins;
+	public int mushrooms;
+	public int deathes;
 
 	[Header("Objects")]
 	public Text coinText;
@@ -54,6 +56,10 @@ public class PlayerController : PhysicsObject {
 
 		if (transform.position.y <= -10.0f) {
 			GameObject cam = GameObject.Find("CM vcam1");
+
+			deathes++;
+
+			transform.localScale = new Vector3(0.75f, 0.75f, 1.0f);
 
 			cam.SetActive(false);
 

@@ -4,12 +4,13 @@ using UnityEngine;
 
 // https://forum.unity.com/threads/mario-style-jumping.381906/
 
-public class CoinBox : MonoBehaviour
+public class MushBox : MonoBehaviour
 {
 	CollisionTrigger colTrigger;
 
 	public Sprite afterHitSprite;
-	public GameObject coin;
+
+	public GameObject mushroom;
 
 	bool hasBeenHit = false;
 
@@ -20,7 +21,8 @@ public class CoinBox : MonoBehaviour
 
 	private void Update()
 	{
-		if (hasBeenHit) return;
+		if (hasBeenHit)
+			return;
 
 
 		if (colTrigger.isCollided)
@@ -35,6 +37,6 @@ public class CoinBox : MonoBehaviour
 
 		GetComponent<SpriteRenderer>().sprite = afterHitSprite;
 
-		GameObject spawnedCoin = Instantiate(coin, transform.position, Quaternion.identity);
+		Instantiate(mushroom, transform.position, Quaternion.identity);
 	}
 }
