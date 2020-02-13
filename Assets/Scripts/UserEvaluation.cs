@@ -18,8 +18,6 @@ public class UserEvaluation : MonoBehaviour
 	{
 		logger = new DataLogger();
 
-		PlayerPrefs.SetInt("id", PlayerPrefs.GetInt("id", -1) + 1);
-
 		DontDestroyOnLoad(this);
 	}
 
@@ -43,12 +41,18 @@ public class UserEvaluation : MonoBehaviour
 		{
 			case 1:
 				SceneManager.LoadScene("GameScene");
+
 				break;
 
 			case 2:
 				logger.Save();
+
+				PlayerPrefs.SetInt("id", PlayerPrefs.GetInt("id", -1) + 1);
+
 				SceneManager.LoadScene("MenuScene");
+
 				Destroy(gameObject);
+
 				break;
 		}
 	}

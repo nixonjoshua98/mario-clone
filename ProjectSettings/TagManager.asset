@@ -7,6 +7,9 @@ TagManager:
   - Coin
   - GameManager
   - UserEvaluation
+  - Mushroom
+  - Enemy
+  - EnemyTop
   layers:
   - Default
   - TransparentFX

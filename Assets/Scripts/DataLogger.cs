@@ -24,20 +24,22 @@ public class DataLogger
 		var userEval	= GameObject.FindGameObjectWithTag("UserEvaluation").GetComponent<UserEvaluation>();
 		var gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-		int gameVarient				= userEval.currentScene;
-		int levelCompletetionTime	= (int)gameManager.lifetime;
+		int gameVariant				= userEval.currentScene;
+		int levelCompletionTime		= (int)gameManager.lifetime;
 		int mushrooms				= player.mushrooms;
-		int deathes					= player.deathes;
+		int deaths					= player.deathes;
 		int coins					= player.coins;
+		int hits					= player.hits;
+		int kills					= player.kills;
 
-		data.Add(new List<int> { participant_id, gameVarient, levelCompletetionTime, mushrooms, deathes, coins });
+		data.Add(new List<int> { participant_id, gameVariant, levelCompletionTime, mushrooms, deaths, coins, hits, kills });
 	}
 
 	public void Save()
 	{
 		List<string> stringData = new List<string>
 		{
-			"participant_id, gameVarient, levelCompletetionTime, mushrooms, deathes, coins"
+			"participant_id, gameVariant, levelCompletionTime, mushrooms, deaths, coins, hits, kills"
 		};
 
 		foreach (List<int> row in data)

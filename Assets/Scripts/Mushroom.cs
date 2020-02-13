@@ -12,16 +12,4 @@ public class Mushroom : PhysicsObject
 
 		transform.position = pos;
 	}
-
-	private void OnCollisionEnter2D(Collision2D collision)
-	{
-		if (collision.gameObject.CompareTag("Player"))
-		{
-			Destroy(gameObject);
-
-			collision.gameObject.transform.localScale = new Vector3(0.9f, 0.9f, 1.0f);
-
-			collision.gameObject.GetComponent<PlayerController>().mushrooms++;
-		}
-	}
 }
