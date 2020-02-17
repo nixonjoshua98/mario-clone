@@ -100,25 +100,27 @@ public class PlayerController : PhysicsObject
 
 		else if (collision.gameObject.CompareTag("Enemy"))
 		{
-			ContactPoint2D contact = collision.contacts[0];
+			float offset = mushrooms == 0 ? 0.7f : 0.9f;
 
 			Destroy(collision.gameObject);
 
-			if (contact.point.y >= collision.gameObject.transform.position.y)
+			if (transform.position.y >= (collision.gameObject.transform.position.y + offset))
 			{
 				kills++;
 			}
-
 			else
 			{
-				hits++;
-
 				hp--;
 
-				Destroy(collision.gameObject);
-
+				// Die
 				if (hp == -1)
 					OnDeath();
+
+				// Hit
+				else
+				{
+					StartCoroutine(IPlayerShrink());
+				}
 			}
 		}
 	}
