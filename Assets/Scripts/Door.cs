@@ -8,7 +8,10 @@ public class Door : MonoBehaviour
 	{
 		if (collision.gameObject.CompareTag("Player"))
 		{
-			GameObject.FindGameObjectWithTag("UserEvaluation").GetComponent<UserEvaluation>().NextScene();
+			GameObject obj		= GameObject.FindGameObjectWithTag("UserEvaluation");
+			UserEvaluation eval = obj.GetComponent<UserEvaluation>();
+
+			eval.NextScene();
 		}
 	}
 }

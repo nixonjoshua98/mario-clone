@@ -13,6 +13,8 @@ public class UserEvaluation : MonoBehaviour
 
 	private DataLogger logger;
 
+	public AssetMode assetMode;
+
 
 	private void Awake()
 	{
@@ -28,7 +30,9 @@ public class UserEvaluation : MonoBehaviour
 
 	public void StartStudy()
 	{
-		SceneManager.LoadScene("GameScene");
+		SceneManager.LoadSceneAsync("GameScene");
+
+		assetMode = AssetMode.SPRITE;
 	}
 
 	public void NextScene()
@@ -40,7 +44,9 @@ public class UserEvaluation : MonoBehaviour
 		switch (currentScene)
 		{
 			case 1:
-				SceneManager.LoadScene("GameScene");
+				SceneManager.LoadSceneAsync("GameScene");
+
+				assetMode = AssetMode.PRIMITIVE;
 
 				break;
 

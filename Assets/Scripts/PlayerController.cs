@@ -26,9 +26,21 @@ public class PlayerController : PhysicsObject
 	[Header("Objects")]
 	public Text coinText;
 
-	private void Awake()
+	[Header("Sprites")]
+	public Sprite primSprite;
+
+	public override void Start()
 	{
+		base.Start();
+
 		startPoint = transform.position;
+
+		if (GameManager.instance.assetMode == AssetMode.PRIMITIVE)
+		{
+			anim.enabled = false;
+
+			spriteRenderer.sprite = primSprite;
+		}
 	}
 
 	IEnumerator IPlayerGrow()
@@ -84,6 +96,8 @@ public class PlayerController : PhysicsObject
 
 	}
 
+
+
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 
@@ -95,7 +109,7 @@ public class PlayerController : PhysicsObject
 
 			Destroy(collision.gameObject);
 
-			StartCoroutine("IPlayerGrow");
+			StartCoroutine(IPlayerGrow());
 		}
 
 		else if (collision.gameObject.CompareTag("Enemy"))
@@ -107,10 +121,14 @@ public class PlayerController : PhysicsObject
 			if (transform.position.y >= (collision.gameObject.transform.position.y + offset))
 			{
 				kills++;
+
+				Debug.Log("Killed Enemy");
 			}
 			else
 			{
 				hp--;
+
+				Debug.Log("Hit by Enemy");
 
 				// Die
 				if (hp == -1)

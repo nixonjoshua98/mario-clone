@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityModifier: 1
+  circle: {fileID: 21300000, guid: 99b27f43cdfdf3a4a8d5adee05443dfe, type: 3}
 --- !u!61 &2008490544
 BoxCollider2D:
   m_ObjectHideFlags: 0

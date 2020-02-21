@@ -9,11 +9,21 @@ public class EnemyController : PhysicsObject
 	// Components
 	SpriteRenderer spriteRenderer;
 
-	private void Awake()
+	[Header("Sprites")]
+	public Sprite primitiveSprite;
+
+	public override void Start()
 	{
-		spriteRenderer = GetComponent<SpriteRenderer>();
+		base.Start();
 
 		direction = Vector2.left;
+
+		spriteRenderer = GetComponent<SpriteRenderer>();
+
+		if (GameManager.instance.assetMode == AssetMode.PRIMITIVE)
+		{
+			spriteRenderer.sprite = primitiveSprite;
+		}
 	}
 
 	private new void FixedUpdate()

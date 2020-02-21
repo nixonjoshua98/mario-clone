@@ -160,5 +160,8 @@ MonoBehaviour:
   anim: {fileID: 8826354469501705501}
   coins: 0
   mushrooms: 0
+  hits: 0
   deathes: 0
+  kills: 0
   coinText: {fileID: 0}
+  primSprite: {fileID: 21300000, guid: fffb19eb954266448a3faffad2723886, type: 3}

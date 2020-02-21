@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityModifier: 1
+  primitiveSprite: {fileID: 21300000, guid: d55b959f2891c5e4ea1429c8880c3835, type: 3}
 --- !u!61 &7002302057711812978
 BoxCollider2D:
   m_ObjectHideFlags: 0

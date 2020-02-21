@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   afterHitSprite: {fileID: -9075936618163766259, guid: 8ce700d345181044db9b59bcd36769ad,
     type: 3}
+  square: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
   mushroom: {fileID: 4708529943992583781, guid: 96e1d637311a6a24bb8513fa656c6864,
     type: 3}
 --- !u!1 &8411659586497175777
