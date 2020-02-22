@@ -364,7 +364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentScene: 0
   IDText: {fileID: 1335519508}
-  participant: {fileID: 11400000, guid: c2a08b43f2b269c4fab2e0b0afb870b5, type: 2}
+  assetMode: 0
 --- !u!4 &661612659
 Transform:
   m_ObjectHideFlags: 0
