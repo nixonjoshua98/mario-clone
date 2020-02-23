@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2227087232867625877}
   - component: {fileID: 2227087232867625876}
-  - component: {fileID: -5677224281838862314}
+  - component: {fileID: -8285723869794619637}
   m_Layer: 0
   m_Name: Dirt2
   m_TagString: Untagged
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-5677224281838862314
+--- !u!114 &-8285723869794619637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2227087232867625866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 85357efddcfd9f644b57e0f9e3494d38, type: 3}
+  m_Script: {fileID: 11500000, guid: 125a39445d992c5438b62e629ab97d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  square: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
+  primitive: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
+  col: {x: 0.627451, y: 0.32156864, z: 0.1764706}
+  newScale: {x: 0, y: 0, z: 0}

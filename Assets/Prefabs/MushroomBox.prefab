@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8411659586198143217}
   - component: {fileID: 8411659586198143216}
   - component: {fileID: 8411659586198143219}
-  - component: {fileID: -6486092658395764128}
+  - component: {fileID: -3273517469243071666}
+  - component: {fileID: -502588081456674376}
   m_Layer: 0
   m_Name: MushroomBox
   m_TagString: Untagged
@@ -111,7 +112,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &-6486092658395764128
+--- !u!114 &-3273517469243071666
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -120,14 +121,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 8411659586198143214}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d76dcb201279b324884514944f1aa0ad, type: 3}
+  m_Script: {fileID: 11500000, guid: d3a9e8832dd8b9147970221c4fea635f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 4708529943992583781, guid: 96e1d637311a6a24bb8513fa656c6864,
+    type: 3}
   afterHitSprite: {fileID: -9075936618163766259, guid: 8ce700d345181044db9b59bcd36769ad,
     type: 3}
-  square: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
-  mushroom: {fileID: 4708529943992583781, guid: 96e1d637311a6a24bb8513fa656c6864,
-    type: 3}
+--- !u!114 &-502588081456674376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8411659586198143214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125a39445d992c5438b62e629ab97d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primitive: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
+  destroy: 0
+  col: {x: 1, y: 1, z: 0}
+  newScale: {x: 0, y: 0, z: 0}
 --- !u!1 &8411659586497175777
 GameObject:
   m_ObjectHideFlags: 0

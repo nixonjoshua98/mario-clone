@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6337625379951448403}
   - component: {fileID: 6337625379951448402}
   - component: {fileID: 6337625379951448414}
+  - component: {fileID: 9194248725391368520}
   - component: {fileID: 7002302057711812978}
   m_Layer: 0
   m_Name: Enemy
@@ -118,7 +119,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravityModifier: 1
-  primitiveSprite: {fileID: 21300000, guid: d55b959f2891c5e4ea1429c8880c3835, type: 3}
+--- !u!114 &9194248725391368520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6337625379951448401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 125a39445d992c5438b62e629ab97d5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  primitive: {fileID: 21300000, guid: d55b959f2891c5e4ea1429c8880c3835, type: 3}
+  destroy: 0
+  col: {x: 0, y: 0, z: 0}
+  newScale: {x: 0, y: 0, z: 0}
 --- !u!61 &7002302057711812978
 BoxCollider2D:
   m_ObjectHideFlags: 0

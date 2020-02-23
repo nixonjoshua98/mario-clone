@@ -82,7 +82,8 @@ GameObject:
   - component: {fileID: 7491147456258010694}
   - component: {fileID: 7491147456258010695}
   - component: {fileID: 7491147456258010692}
-  - component: {fileID: 7491147456258010693}
+  - component: {fileID: -6967865831669207612}
+  - component: {fileID: -3400425168662607759}
   m_Layer: 0
   m_Name: CoinBox
   m_TagString: Untagged
@@ -182,7 +183,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7491147456258010693
+--- !u!114 &-6967865831669207612
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,10 +192,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 7491147456258010713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0227336b62f265148ae959ce6710b6d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 125a39445d992c5438b62e629ab97d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coin: {fileID: 3081833356206023235, guid: ee08601f7435079418b881701e65822e, type: 3}
+  primitive: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
+  col: {x: 1, y: 1, z: 0}
+  newScale: {x: 0, y: 0, z: 0}
+--- !u!114 &-3400425168662607759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7491147456258010713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a9e8832dd8b9147970221c4fea635f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemToSpawn: {fileID: 3081833356206023235, guid: ee08601f7435079418b881701e65822e,
+    type: 3}
   afterHitSprite: {fileID: -9075936618163766259, guid: 8ce700d345181044db9b59bcd36769ad,
     type: 3}
-  square: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
