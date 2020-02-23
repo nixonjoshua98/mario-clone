@@ -35,18 +35,16 @@ public class UserEvaluation : MonoBehaviour
 
 	public void NextScene()
 	{
-		++currentScene;
-
 		switch (currentScene)
 		{
-			case 1:
+			case 0:
 				SceneManager.LoadSceneAsync("GameScene");
 
 				assetMode = AssetMode.SPRITE;
 
 				break;
 
-			case 2:
+			case 1:
 				logger.Log();
 
 				SceneManager.LoadSceneAsync("GameScene");
@@ -55,7 +53,7 @@ public class UserEvaluation : MonoBehaviour
 
 				break;
 
-			case 3:
+			case 2:
 				logger.Log();
 
 				SceneManager.LoadSceneAsync("GameScene");
@@ -64,7 +62,7 @@ public class UserEvaluation : MonoBehaviour
 
 				break;
 
-			case 4:
+			case 3:
 				logger.Log();
 
 				logger.Save();
@@ -76,7 +74,8 @@ public class UserEvaluation : MonoBehaviour
 				Destroy(gameObject);
 
 				break;
-
 		}
+
+		++currentScene;
 	}
 }
