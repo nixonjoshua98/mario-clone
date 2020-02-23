@@ -30,27 +30,43 @@ public class UserEvaluation : MonoBehaviour
 
 	public void StartStudy()
 	{
-		SceneManager.LoadSceneAsync("GameScene");
-
-		assetMode = AssetMode.SPRITE;
+		NextScene();
 	}
 
 	public void NextScene()
 	{
 		++currentScene;
 
-		logger.Log();
-
 		switch (currentScene)
 		{
 			case 1:
+				SceneManager.LoadSceneAsync("GameScene");
+
+				assetMode = AssetMode.SPRITE;
+
+				break;
+
+			case 2:
+				logger.Log();
+
+				SceneManager.LoadSceneAsync("GameScene");
+
+				assetMode = AssetMode.BLACK_WHITE;
+
+				break;
+
+			case 3:
+				logger.Log();
+
 				SceneManager.LoadSceneAsync("GameScene");
 
 				assetMode = AssetMode.PRIMITIVE;
 
 				break;
 
-			case 2:
+			case 4:
+				logger.Log();
+
 				logger.Save();
 
 				PlayerPrefs.SetInt("id", PlayerPrefs.GetInt("id", -1) + 1);
@@ -60,6 +76,7 @@ public class UserEvaluation : MonoBehaviour
 				Destroy(gameObject);
 
 				break;
+
 		}
 	}
 }
