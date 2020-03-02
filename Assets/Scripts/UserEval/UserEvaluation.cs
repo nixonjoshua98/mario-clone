@@ -11,14 +11,22 @@ public class UserEvaluation : MonoBehaviour
 
 	public Text IDText;
 
-	private DataLogger logger;
+	public DataLogger logger;
 
 	public AssetMode assetMode;
+
+	List<int> ids;
+
+	int prevID;
+
+	int scenesDone = 0;
 
 
 	private void Awake()
 	{
 		logger = new DataLogger();
+
+		ids = new List<int>() { 0, 1, 2 };
 
 		DontDestroyOnLoad(this);
 	}
@@ -35,6 +43,19 @@ public class UserEvaluation : MonoBehaviour
 
 	public void NextScene()
 	{
+		if (ids.Count == 0)
+			currentScene = 3;
+		else
+		{
+			int index = Random.Range(0, ids.Count);
+
+			prevID = currentScene;
+
+			currentScene = ids[index];
+
+			ids.RemoveAt(index);
+		}
+
 		switch (currentScene)
 		{
 			case 0:
@@ -45,8 +66,6 @@ public class UserEvaluation : MonoBehaviour
 				break;
 
 			case 1:
-				logger.Log();
-
 				SceneManager.LoadSceneAsync("GameScene");
 
 				assetMode = AssetMode.BLACK_WHITE;
@@ -54,8 +73,6 @@ public class UserEvaluation : MonoBehaviour
 				break;
 
 			case 2:
-				logger.Log();
-
 				SceneManager.LoadSceneAsync("GameScene");
 
 				assetMode = AssetMode.PRIMITIVE;
@@ -63,8 +80,6 @@ public class UserEvaluation : MonoBehaviour
 				break;
 
 			case 3:
-				logger.Log();
-
 				logger.Save();
 
 				PlayerPrefs.SetInt("id", PlayerPrefs.GetInt("id", -1) + 1);
@@ -76,6 +91,6 @@ public class UserEvaluation : MonoBehaviour
 				break;
 		}
 
-		++currentScene;
+		++scenesDone;
 	}
 }

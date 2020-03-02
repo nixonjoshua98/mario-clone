@@ -11,6 +11,8 @@ public class Door : MonoBehaviour
 			GameObject obj		= GameObject.FindGameObjectWithTag("UserEvaluation");
 			UserEvaluation eval = obj.GetComponent<UserEvaluation>();
 
+			eval.logger.Log();
+
 			eval.NextScene();
 		}
 	}

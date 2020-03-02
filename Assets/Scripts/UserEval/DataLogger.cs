@@ -24,7 +24,7 @@ public class DataLogger
 		var userEval	= GameObject.FindGameObjectWithTag("UserEvaluation").GetComponent<UserEvaluation>();
 		var gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
 
-		int gameVariant				= userEval.currentScene;
+		int gameVariant				= (int) userEval.assetMode;
 		int levelCompletionTime		= (int)gameManager.lifetime;
 		int mushrooms				= player.mushrooms;
 		int deaths					= player.deathes;

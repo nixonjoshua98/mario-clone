@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   primitive: {fileID: 21300000, guid: 3cb27f01c032027498625fde45b7213a, type: 3}
+  destroy: 0
   col: {x: 1, y: 1, z: 0}
   newScale: {x: 0, y: 0, z: 0}
 --- !u!114 &-3400425168662607759
@@ -212,5 +213,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToSpawn: {fileID: 3081833356206023235, guid: ee08601f7435079418b881701e65822e,
     type: 3}
-  afterHitSprite: {fileID: -9075936618163766259, guid: 8ce700d345181044db9b59bcd36769ad,
+  afterHitSprite: {fileID: -3694533877916086887, guid: 8ce700d345181044db9b59bcd36769ad,
     type: 3}

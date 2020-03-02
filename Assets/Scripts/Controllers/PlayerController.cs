@@ -46,7 +46,7 @@ public class PlayerController : PhysicsObject
 	IEnumerator IPlayerGrow()
 	{
 		const float COOLDOWN = 1.0f;
-		const float INTERVAL = 0.2f;
+		const float INTERVAL = 0.25f;
 
 		float timer = 0.0f;
 
@@ -73,7 +73,7 @@ public class PlayerController : PhysicsObject
 	IEnumerator IPlayerShrink()
 	{
 		const float COOLDOWN = 1.0f;
-		const float INTERVAL = 0.2f;
+		const float INTERVAL = 0.25f;
 
 		float timer = 0.0f;
 

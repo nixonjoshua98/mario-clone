@@ -48,6 +48,10 @@ public class ItemBox : MonoBehaviour
 			case AssetMode.SPRITE:
 				spriteRenderer.sprite = afterHitSprite;
 				break;
+
+			case AssetMode.BLACK_WHITE:
+				spriteRenderer.sprite = afterHitSprite;
+				break;
 		}
 
 		GameObject spawnedCoin = Instantiate(itemToSpawn, transform.position, Quaternion.identity);

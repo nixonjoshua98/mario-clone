@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public enum AssetMode
 {
-	SPRITE,
+	SPRITE = 0,
+	BLACK_WHITE,
 	PRIMITIVE,
-	BLACK_WHITE
 }
 
 public class GameManager : MonoBehaviour
