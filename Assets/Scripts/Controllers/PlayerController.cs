@@ -17,10 +17,9 @@ public class PlayerController : PhysicsObject
 	public Animator anim;
 
 	[Header("Collectables")]
-	public int coins;
-	public int mushrooms;
+	public int coins; // Used for UI only
+	public int collectables;
 	public int hits;
-	public int deathes;
 	public int kills;
 
 	[Header("Objects")]
@@ -103,7 +102,7 @@ public class PlayerController : PhysicsObject
 
 		if (collision.gameObject.CompareTag("Mushroom"))
 		{
-			mushrooms++;
+			collectables++;
 
 			hp = 1;
 
@@ -114,21 +113,19 @@ public class PlayerController : PhysicsObject
 
 		else if (collision.gameObject.CompareTag("Enemy"))
 		{
-			float offset = mushrooms == 0 ? 0.7f : 0.9f;
+			float offset = hp == 0 ? 0.7f : 0.9f;
 
 			Destroy(collision.gameObject);
 
 			if (transform.position.y >= (collision.gameObject.transform.position.y + offset))
 			{
 				kills++;
-
-				Debug.Log("Killed Enemy");
 			}
 			else
 			{
 				hp--;
 
-				Debug.Log("Hit by Enemy");
+				hits++;
 
 				// Die
 				if (hp == -1)
@@ -160,6 +157,8 @@ public class PlayerController : PhysicsObject
 
 	private new void FixedUpdate()  
 	{
+		Debug.Log(kills + ", " + hits + ", " + collectables);
+
 		base.FixedUpdate();
 
 		coinText.text = coins.ToString();
@@ -174,8 +173,11 @@ public class PlayerController : PhysicsObject
 
 		anim.SetFloat("VelocityX", Mathf.Abs(currentVelocity.x));
 
+		// Fall off
 		if (transform.position.y <= -10.0f)
 		{
+			hits++;
+
 			OnDeath();
 		}
 	}
@@ -186,7 +188,6 @@ public class PlayerController : PhysicsObject
 
 		GameObject cam = GameObject.Find("CM vcam1");
 
-		deathes++;
 		hp = 0;
 
 		transform.localScale = new Vector3(0.75f, 0.75f, 1.0f);

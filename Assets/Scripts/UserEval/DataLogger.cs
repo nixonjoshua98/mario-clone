@@ -26,20 +26,18 @@ public class DataLogger
 
 		int gameVariant				= (int) userEval.assetMode;
 		int levelCompletionTime		= (int)gameManager.lifetime;
-		int mushrooms				= player.mushrooms;
-		int deaths					= player.deathes;
-		int coins					= player.coins;
+		int collectables			= player.collectables;
 		int hits					= player.hits;
 		int kills					= player.kills;
 
-		data.Add(new List<int> { participant_id, gameVariant, levelCompletionTime, mushrooms, deaths, coins, hits, kills });
+		data.Add(new List<int> { participant_id, gameVariant, levelCompletionTime, collectables, hits, kills });
 	}
 
 	public void Save()
 	{
 		List<string> stringData = new List<string>
 		{
-			"participant_id, gameVariant, levelCompletionTime, mushrooms, deaths, coins, hits, kills"
+			"participant_id, gameVariant, levelCompletionTime, collectables, hits, kills"
 		};
 
 		foreach (List<int> row in data)

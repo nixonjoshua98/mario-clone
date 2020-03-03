@@ -11,7 +11,10 @@ public class Coin : PhysicsObject
 
 	void DestroyCoin()
 	{
-		GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().coins++;
+		PlayerController player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
+
+		player.coins++;
+		player.collectables++;
 
 		Destroy(gameObject);
 	}
