@@ -17,10 +17,6 @@ public class UserEvaluation : MonoBehaviour
 
 	List<int> ids;
 
-	int prevID;
-
-	int scenesDone = 0;
-
 
 	private void Awake()
 	{
@@ -48,8 +44,6 @@ public class UserEvaluation : MonoBehaviour
 		else
 		{
 			int index = Random.Range(0, ids.Count);
-
-			prevID = currentScene;
 
 			currentScene = ids[index];
 
@@ -90,7 +84,5 @@ public class UserEvaluation : MonoBehaviour
 
 				break;
 		}
-
-		++scenesDone;
 	}
 }

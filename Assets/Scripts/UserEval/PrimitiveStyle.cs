@@ -20,6 +20,7 @@ public class PrimitiveStyle : MonoBehaviour
 	{
 		if (GameManager.instance.assetMode == AssetMode.PRIMITIVE)
 		{
+			// To be destroyed
 			if (destroy)
 			{
 				Destroy(gameObject);
@@ -27,6 +28,7 @@ public class PrimitiveStyle : MonoBehaviour
 				return;
 			}
 
+			// Has a Renderer
 			if (gameObject.TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
 			{
 				spriteRenderer.sprite = primitive;
@@ -35,6 +37,7 @@ public class PrimitiveStyle : MonoBehaviour
 					spriteRenderer.color = new Color(col.x, col.y, col.z);
 			}
 
+			// Has a UI Image component
 			else if (gameObject.TryGetComponent<Image>(out Image image))
 			{
 				image.sprite = primitive;
@@ -43,7 +46,7 @@ public class PrimitiveStyle : MonoBehaviour
 					image.color = new Color(col.x, col.y, col.z);
 			}
 
-
+			// Update the scale if it needs to change
 			if (newScale != Vector3.zero)
 				transform.localScale = newScale;
 		}

@@ -157,8 +157,6 @@ public class PlayerController : PhysicsObject
 
 	private new void FixedUpdate()  
 	{
-		Debug.Log(kills + ", " + hits + ", " + collectables);
-
 		base.FixedUpdate();
 
 		coinText.text = coins.ToString();
