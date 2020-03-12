@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -16,7 +15,6 @@ public class UserEvaluation : MonoBehaviour
 	public AssetMode assetMode;
 
 	List<int> ids;
-
 
 	private void Awake()
 	{
