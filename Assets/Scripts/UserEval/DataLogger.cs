@@ -6,16 +6,10 @@ public class DataLogger
 {
 	List<List<int>> data = new List<List<int>>();
 
-	int participant_id;
-
 	public DataLogger()
 	{
-		participant_id = PlayerPrefs.GetInt("id", -1);
-
-		if (participant_id == -1)
+		if (PlayerPrefs.GetInt("id", -1) == -1)
 			PlayerPrefs.SetInt("id", 0);
-
-		participant_id = PlayerPrefs.GetInt("id");
 	}
 
 	public void Log()
@@ -29,6 +23,8 @@ public class DataLogger
 		int collectables			= player.collectables;
 		int hits					= player.hits;
 		int kills					= player.kills;
+
+		int participant_id = PlayerPrefs.GetInt("id");
 
 		data.Add(new List<int> { participant_id, gameVariant, levelCompletionTime, collectables, hits, kills });
 	}
@@ -58,6 +54,8 @@ public class DataLogger
 		{
 			System.IO.Directory.CreateDirectory(dataDir);
 		}
+
+		int participant_id = PlayerPrefs.GetInt("id");
 
 		string filename = "participant-" + participant_id.ToString() + ".csv";
 		string path = dataDir + "\\" + filename;
